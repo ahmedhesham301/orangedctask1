@@ -7,7 +7,7 @@ while getopts "t:f:" opt; do
   case $opt in
     t) diskWarningThreshold=$OPTARG ;;
     f) outputFile=$OPTARG ;;
-    *) echo "Usage: $0 [-t threshold]" >&2; exit 1 ;;
+    *) echo "Usage: $0 [-t threshold -f filename]" >&2; exit 1 ;;
   esac
 done
 

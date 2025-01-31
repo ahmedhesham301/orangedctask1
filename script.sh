@@ -11,7 +11,7 @@ while getopts "t:f:" opt; do
   esac
 done
 
-df| awk -v threshold="$diskWarningThreshold" '/^\/dev/ {print $1"\t"$5; if(($3 / $2) *100 > threshold) print "Warning: " $1 " has less than low free space"}' | tee -a "$outputFile"
+df| awk -v threshold="$diskWarningThreshold" '/^\/dev/ {print $1"\t"$5; if(($3 / $2) *100 > threshold) print "Warning: " $1 " has low free space"}' | tee -a "$outputFile"
 
 echo "============================================" | tee -a "$outputFile"
 
